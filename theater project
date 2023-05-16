@@ -1,0 +1,76 @@
+seats = 1000
+normal = 900
+recliner = 50
+nprice = 250
+rprice = 350
+comboprice = 500
+
+
+while True:
+    name=input("enter name:")
+    bill=0
+    
+    print("""availeble seats are normal - 250 each
+    recliner - 350 each""")
+    
+    
+    
+    while True:
+        seat_type =input("enter the type of seats : ").lower()
+        
+        
+        
+        if seat_type=="normal":
+            seats=int(input("enter the  seats:"))
+            normal-=seats
+            print(seats)
+            
+            
+            
+            if seats> normal:
+                print("housefull")
+            else:
+                bill+=nprice*seats
+                combo=input("do you to add a combo of rs 500?")
+                
+                
+                if combo in ["yes","Yes","YES"]:
+                    bill+=comboprice
+                print(bill)
+                
+                
+        elif seat_type=="recliner":
+                seats=int(input("enter the setas: "))
+                recliner-=seats
+                print(seats)
+                
+                
+                if seats>recliner:
+                    print("housefull")
+                else:
+                    bill+=rprice*seats
+                    combo=input("do want to add combo of rs 500?")
+                    
+                    
+                    
+                    if combo in ["yes","Yes","YES"]:
+                        bill+=comboprice
+                        
+                        
+    choice = input("do you want to add more seats?") 
+    if choice=="no":
+        break
+            
+        
+        
+                    
+                    
+print("~"*30)
+print("total bill is",bill)
+print("~"*30)
+            
+            
+repeat = input("next person")
+if repeat in ["no","No","NO"]:
+    break
+    
